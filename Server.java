@@ -68,3 +68,20 @@ public class Server {
                 sb.append("  ").append(e.getKey()).append(" → ").append(e.getValue()).append(" mesazhe\n");
             }
 }
+        static class ClientHandler implements Runnable {
+            private final Socket socket;
+            private final BufferedReader in;
+            private final PrintWriter out;
+            private final String clientIP;
+            private boolean isAdmin = false;
+            private Timer timeoutTimer;
+
+            public ClientHandler(Socket socket) throws IOException {
+                this.socket = socket;
+                this.clientIP = socket.getInetAddress().getHostAddress();
+                this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                this.out = new PrintWriter(socket.getOutputStream(), true);
+                socket.setSoTimeout(TIMEOUT_MS);
+                resetTimeout();
+                log(" Lidhje e re nga: " + clientIP);
+            }

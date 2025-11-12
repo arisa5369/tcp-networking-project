@@ -47,4 +47,14 @@ public class Server {
             executor.shutdown();
         }
     }
+    private static void startStatsLogger() {
+        Timer statsTimer = new Timer(true);
+        statsTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                logServerStats();
+            }
+        }, 0, 30000);
+    }
+
 }

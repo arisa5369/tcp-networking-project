@@ -20,4 +20,31 @@ public class Server {
     private static final String MESSAGE_LOG = "messages_log.txt";
     private static final String STATS_LOG = "server_stats.txt";
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+    public static void main(String[] args) {
+        File logDir = new File(LOG_DIR);
+        if (!logDir.exists()) logDir.mkdirs();
+
+        startStatsLogger();
+
+        try (ServerSocket serverSocket = new ServerSocket(PORT, 0, InetAddress.getByName(HOST))) {
+            System.out.println(" Serveri po dëgjon në portin " + PORT);
+            while (true) {
+                if (activeClients.size() >= MAX_CONNECTIONS) {
+                    System.out.println(" Prag lidhjesh arritur. Duke pritur...");
+                    Thread.sleep(1000);
+                    continue;
+                }
+                Socket clientSocket = serverSocket.accept();
+                ClientHandler handler = new ClientHandler(clientSocket);
+                executor.execute(handler);
+                activeClients.add(handler);
+            }
+        } catch (IOException | InterruptedException e) {
+            System.err.println(" Gabim në server: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            executor.shutdown();
+        }
+    }
 }

@@ -56,5 +56,15 @@ public class Server {
             }
         }, 0, 30000);
     }
-
+    private static void logServerStats() {
+        synchronized (activeClients) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("=== Server Stats @ ").append(DATE_FORMAT.format(new Date())).append(" ===\n");
+            sb.append("Lidhje aktive: ").append(activeClients.size()).append("/").append(MAX_CONNECTIONS).append("\n");
+            sb.append("Klientë aktivë: ");
+            for (ClientHandler c : activeClients) sb.append(c.clientIP).append(" ");
+            sb.append("\nMesazhe për klient:\n");
+            for (Map.Entry<String, Integer> e : messagesPerClient.entrySet()) {
+                sb.append("  ").append(e.getKey()).append(" → ").append(e.getValue()).append(" mesazhe\n");
+            }
 }

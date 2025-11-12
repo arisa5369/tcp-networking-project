@@ -68,6 +68,17 @@ public class Server {
                 sb.append("  ").append(e.getKey()).append(" → ").append(e.getValue()).append(" mesazhe\n");
             }
 }
+        sb.append(String.format("Trafiku total: %d bytes dërguar | %d bytes pranuar\n",
+                totalBytesSent, totalBytesReceived));
+        sb.append("=========================================\n\n");
+
+        try (PrintWriter pw = new PrintWriter(new FileWriter(STATS_LOG, true))) {
+            pw.print(sb.toString());
+        } catch (IOException e) {
+            System.err.println("Gabim gjatë ruajtjes së statistikave: " + e.getMessage());
+        }
+    }
+}
         static class ClientHandler implements Runnable {
             private final Socket socket;
             private final BufferedReader in;

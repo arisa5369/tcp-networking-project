@@ -1,0 +1,2 @@
+Pershendetje nga serveri!
+Ky është një test për komandën /read dhe /search.

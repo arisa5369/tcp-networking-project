@@ -1,0 +1,148 @@
+/list
+
+/list
+/list
+/read emri.txt
+/info info.txt
+/search admin
+/upload test.txt
+/delete sekrete.txt
+/list
+/delete test.txt
+/upload test.txt
+/list
+/read emri.txt
+/search fjala
+/search fjala
+/info emri.txt
+/info emri.txt
+/upload test.txt
+/download emri.txt
+/download emri.txt
+/list
+/read emri.txt
+/read emri.txt
+/search test
+/download emri.txt
+/list
+/read emri.txt
+/read emri.txt
+/search test
+[2025-11-11 21:17:10] Lidhje e re nga: 192.168.0.17
+[2025-11-11 21:17:26] Admin u identifikua: 192.168.0.17
+[2025-11-11 21:17:35] Mesazh nga 192.168.0.17: /list
+[2025-11-11 21:17:59] Mesazh nga 192.168.0.17: /read info.txt
+[2025-11-11 21:18:09] Mesazh nga 192.168.0.17: /read info.txt
+[2025-11-11 21:21:01] Lidhje e re nga: 192.168.0.17
+[2025-11-11 21:21:08] Admin u identifikua: 192.168.0.17
+[2025-11-11 21:21:11] Mesazh nga 192.168.0.17: /list
+[2025-11-11 21:22:51] Lidhje e re nga: 192.168.0.17
+[2025-11-11 21:22:58] Admin u identifikua: 192.168.0.17
+[2025-11-11 21:23:03] Mesazh nga 192.168.0.17: /list
+[2025-11-11 21:26:48] Lidhje e re nga: 192.168.0.17
+[2025-11-11 21:27:06] Përdorues i rregullt: 192.168.0.17
+[2025-11-11 21:27:35] Lidhje e re nga: 192.168.0.17
+[2025-11-11 21:27:43] Admin u identifikua: 192.168.0.17
+[2025-11-11 21:28:06] Mesazh nga 192.168.0.17: /list
+[2025-11-11 21:28:52] Lidhje e re nga: 192.168.0.17
+[2025-11-11 21:28:59] Admin u identifikua: 192.168.0.17
+[2025-11-11 21:29:04] Mesazh nga 192.168.0.17: /list
+[2025-11-11 21:29:11] Mesazh nga 192.168.0.17: /read test.txt
+[2025-11-11 21:29:35] Mesazh nga 192.168.0.17: /read emri.txt
+[2025-11-11 21:29:43] Mesazh nga 192.168.0.17: /read emri.txt
+[2025-11-11 21:29:54] Mesazh nga 192.168.0.17: /reade test.txt
+[2025-11-11 21:30:10] Mesazh nga 192.168.0.17: /read test.txt
+[2025-11-11 21:30:32] Mesazh nga 192.168.0.17: /search test
+[2025-11-11 21:46:41] Lidhje e re nga: 192.168.0.17
+[2025-11-11 21:46:52] Admin u identifikua: 192.168.0.17
+[2025-11-11 21:46:56] Mesazh nga 192.168.0.17: /list
+[2025-11-11 21:47:03] Mesazh nga 192.168.0.17: /read test.txt
+[2025-11-11 21:47:13] Mesazh nga 192.168.0.17: /read emri.txt
+[2025-11-11 21:47:21] Mesazh nga 192.168.0.17: /read emri.txt
+[2025-11-11 21:47:35] Mesazh nga 192.168.0.17: /search test
+[2025-11-11 21:52:30] Lidhje e re nga: 192.168.0.17
+[2025-11-11 21:52:40] Admin u identifikua: 192.168.0.17
+[2025-11-11 21:52:44] Mesazh nga 192.168.0.17: /list
+[2025-11-11 21:52:54] Mesazh nga 192.168.0.17: /read emri.txt
+[2025-11-11 21:53:17] Mesazh nga 192.168.0.17: /read info.txt
+[2025-11-11 21:57:38] Lidhje e re nga: 192.168.0.17
+[2025-11-11 21:57:45] Admin u identifikua: 192.168.0.17
+[2025-11-11 21:57:48] Mesazh nga 192.168.0.17: /list
+[2025-11-11 21:58:21] Lidhje e re nga: 192.168.0.17
+[2025-11-11 21:58:31] Admin u identifikua: 192.168.0.17
+[2025-11-11 21:58:34] Mesazh nga 192.168.0.17: /list
+[2025-11-11 21:58:46] Mesazh nga 192.168.0.17: /reac emri.txt
+[2025-11-11 21:59:13] Mesazh nga 192.168.0.17: /read emri.txt
+[2025-11-11 21:59:52] Mesazh nga 192.168.0.17: /search test.txt 
+[2025-11-11 22:00:05] Mesazh nga 192.168.0.17: /search test.txt
+[2025-11-11 22:00:16] Mesazh nga 192.168.0.17: /search fjal
+[2025-11-11 22:00:25] Mesazh nga 192.168.0.17: /search test
+[2025-11-11 22:00:37] Mesazh nga 192.168.0.17: /search fjal
+[2025-11-11 22:05:42] Lidhje e re nga: 192.168.0.17
+[2025-11-11 22:05:50] Admin u identifikua: 192.168.0.17
+[2025-11-11 22:05:53] Mesazh nga 192.168.0.17: /list
+[2025-11-11 22:05:59] Mesazh nga 192.168.0.17: /read emri.txt
+[2025-11-11 22:06:11] Mesazh nga 192.168.0.17: /search test
+[2025-11-11 22:06:24] Mesazh nga 192.168.0.17: /search fjala
+[2025-11-11 22:06:40] Mesazh nga 192.168.0.17: /download test.txt
+[2025-11-11 22:07:21] Mesazh nga 192.168.0.17: /search test
+[2025-11-11 22:08:05] Lidhje e re nga: 192.168.0.17
+[2025-11-11 22:08:11] Admin u identifikua: 192.168.0.17
+[2025-11-11 22:08:30] Mesazh nga 192.168.0.17: /list
+[2025-11-11 22:08:36] Mesazh nga 192.168.0.17: /read info.txt
+[2025-11-11 22:08:47] Mesazh nga 192.168.0.17: /search Data
+[2025-11-11 22:09:02] Mesazh nga 192.168.0.17: /search test
+[2025-11-11 22:10:12] Gabim komunikimi me 192.168.0.17: Connection reset
+[2025-11-11 22:10:12] Lidhja u mbyll për: 192.168.0.17
+[2025-11-11 22:14:35] Lidhje e re nga: 172.20.10.2
+[2025-11-11 22:14:42] Admin u identifikua: 172.20.10.2
+[2025-11-11 22:14:46] Mesazh nga 172.20.10.2: /list
+[2025-11-11 22:15:03] Mesazh nga 172.20.10.2: /info emri.txt
+[2025-11-12 14:16:42] Lidhje e re nga: 10.11.66.4
+[2025-11-12 14:16:56] Admin u identifikua: 10.11.66.4
+[2025-11-12 14:17:00] Mesazh nga 10.11.66.4: /list
+[2025-11-12 14:17:07] Mesazh nga 10.11.66.4: /read test.txt
+[2025-11-12 14:17:14] Mesazh nga 10.11.66.4: /read emri.txt
+[2025-11-12 14:17:30] Mesazh nga 10.11.66.4: /search fjala
+[2025-11-12 14:17:36] Mesazh nga 10.11.66.4: /serach fjal
+[2025-11-12 14:17:45] Mesazh nga 10.11.66.4: /search fjal
+[2025-11-12 14:17:54] Mesazh nga 10.11.66.4: /search test
+[2025-11-12 14:27:37] 🔗 Lidhje e re nga: 10.11.66.4
+[2025-11-12 14:27:58] 🛠️ Admin u identifikua: 10.11.66.4
+[2025-11-12 14:28:02] 💬 Mesazh nga 10.11.66.4: /list
+[2025-11-12 14:28:13] 💬 Mesazh nga 10.11.66.4: /read emri.txt
+[2025-11-12 14:28:30] 💬 Mesazh nga 10.11.66.4: /search test
+[2025-11-12 14:28:39] 💬 Mesazh nga 10.11.66.4: /download
+[2025-11-12 14:28:39] Gabim në procesim për 10.11.66.4: null
+[2025-11-12 14:28:56] 💬 Mesazh nga 10.11.66.4: /info emri.txt
+[2025-11-12 14:29:46] 💬 Mesazh nga 10.11.66.4: /upload sekrekt.txt
+[2025-11-12 14:30:12] 📁 Upload nga 10.11.66.4: sekrekt.txt (12 bytes)
+[2025-11-12 14:30:32] 💬 Mesazh nga 10.11.66.4: close
+[2025-11-12 14:30:57] 🔗 Lidhje e re nga: 10.11.66.4
+[2025-11-12 14:31:02] 🔗 Lidhje e re nga: 10.11.66.4
+[2025-11-12 14:31:10] 👤 Përdorues i rregullt: 10.11.66.4
+[2025-11-12 14:31:36] 🔗 Lidhje e re nga: 10.11.66.4
+[2025-11-12 14:31:44] 🛠️ Admin u identifikua: 10.11.66.4
+[2025-11-12 14:31:52] 💬 Mesazh nga 10.11.66.4: /delete sekrekt.txt
+[2025-11-12 14:40:51] 🔗 Lidhje e re nga: 10.11.66.52
+[2025-11-12 14:41:10] 🛠️ Admin u identifikua: 10.11.66.52
+[2025-11-12 14:41:28] 💬 Mesazh nga 10.11.66.52: /list
+[2025-11-12 14:46:24] 🔗 Lidhje e re nga: 10.11.66.52
+[2025-11-12 14:46:35] 👤 Përdorues i rregullt: 10.11.66.52
+[2025-11-12 14:46:43] 🔗 Lidhje e re nga: 10.11.66.54
+[2025-11-12 14:46:46] ⚠️ Gabim komunikimi me 10.11.66.54: Connection reset
+[2025-11-12 14:46:46] 🔒 Lidhja u mbyll për: 10.11.66.54
+[2025-11-12 14:46:50] 🔗 Lidhje e re nga: 10.11.66.54
+[2025-11-12 14:46:59] 👤 Përdorues i rregullt: 10.11.66.54
+[2025-11-12 14:47:03] 💬 Mesazh nga 10.11.66.54: /list
+[2025-11-12 14:47:10] 💬 Mesazh nga 10.11.66.54: /search test
+[2025-11-12 14:47:21] 💬 Mesazh nga 10.11.66.52: /download
+[2025-11-12 14:47:21] Gabim në procesim për 10.11.66.52: null
+[2025-11-12 14:47:24] 💬 Mesazh nga 10.11.66.54: /download emri.txt
+[2025-11-12 14:47:46] ⚠️ Gabim komunikimi me 10.11.66.54: Connection reset
+[2025-11-12 14:47:46] 🔒 Lidhja u mbyll për: 10.11.66.54
+[2025-11-12 14:50:01] ⚠️ Gabim komunikimi me 10.11.66.52: Connection reset
+[2025-11-12 14:50:01] 🔒 Lidhja u mbyll për: 10.11.66.52
+[2025-11-12 14:54:48] 🔗 Lidhje e re nga: 10.11.66.4
+[2025-11-12 14:54:51] 👤 Përdorues i rregullt: 10.11.66.4
+[2025-11-12 14:55:00] 💬 Mesazh nga 10.11.66.4: /download emri.txt

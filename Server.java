@@ -215,3 +215,23 @@ public class Server {
                         default:
                             sendResponse("ERROR: Komandë e panjohur.");
                     }
+                } catch (Exception e) {
+                    log("Gabim në procesim për " + clientIP + ": " + e.getMessage());
+                    sendResponse("SERVER_ERROR: " + e.getMessage());
+                }
+            }
+
+            private void sendResponse(String response) {
+                incrementBytesSent(response);
+                out.println(response);
+                out.println("EOF");
+                incrementBytesSent("EOF");
+            }
+
+            private void incrementBytesSent(String msg) {
+                totalBytesSent += msg.getBytes().length;
+            }
+
+            private void incrementBytesReceived(String msg) {
+                totalBytesReceived += msg.getBytes().length;
+            }

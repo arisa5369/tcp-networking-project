@@ -235,3 +235,21 @@ public class Server {
             private void incrementBytesReceived(String msg) {
                 totalBytesReceived += msg.getBytes().length;
             }
+            private String readFile(File file) {
+                try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+                    StringBuilder sb = new StringBuilder();
+                    String line;
+                    while ((line = br.readLine()) != null) sb.append(line).append("\n");
+                    return sb.toString().trim();
+                } catch (IOException e) {
+                    return "ERROR: Gabim gjatë leximit.";
+                }
+            }
+
+            private void writeFile(File file, String content) {
+                try (PrintWriter pw = new PrintWriter(new FileWriter(file))) {
+                    pw.print(content);
+                } catch (IOException e) {
+                    log("Gabim shkrimi: " + e.getMessage());
+                }
+            }

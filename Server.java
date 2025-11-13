@@ -127,3 +127,24 @@ public class Server {
                 String arg = parts.length > 1 ? parts[1].trim() : null;
                 File dir = new File(LOG_DIR);
                 if (!dir.exists()) dir.mkdirs();
+                try {
+                    switch (cmd) {
+                        case "/list":
+                            String[] files = dir.list();
+                            sendResponse(files == null || files.length == 0 ? "[]" : Arrays.toString(files));
+                            break;
+
+                        case "/read":
+                            if (arg == null) {
+                                sendResponse("ERROR: Specifiko emrin e skedarit.");
+                                return;
+                            }
+                            File file = new File(dir, arg);
+                            sendResponse(file.exists() ? readFile(file) : "ERROR: Skedari nuk ekziston.");
+                            break;
+
+                        case "/info":
+                            if (arg == null) {
+                                sendResponse("ERROR: Specifiko emrin e skedarit.");
+                                return;
+                            }

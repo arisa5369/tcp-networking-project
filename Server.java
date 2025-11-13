@@ -68,17 +68,6 @@ public class Server {
                 sb.append("  ").append(e.getKey()).append(" → ").append(e.getValue()).append(" mesazhe\n");
             }
 }
-        sb.append(String.format("Trafiku total: %d bytes dërguar | %d bytes pranuar\n",
-                totalBytesSent, totalBytesReceived));
-        sb.append("=========================================\n\n");
-
-        try (PrintWriter pw = new PrintWriter(new FileWriter(STATS_LOG, true))) {
-            pw.print(sb.toString());
-        } catch (IOException e) {
-            System.err.println("Gabim gjatë ruajtjes së statistikave: " + e.getMessage());
-        }
-    }
-}
         static class ClientHandler implements Runnable {
             private final Socket socket;
             private final BufferedReader in;
@@ -96,3 +85,19 @@ public class Server {
                 resetTimeout();
                 log(" Lidhje e re nga: " + clientIP);
             }
+            @Override
+            public void run() {
+                try {
+                    // Login
+                    String login = in.readLine();
+                    incrementBytesReceived(login);
+                    if ("admin:password".equals(login)) {
+                        isAdmin = true;
+                        out.println("ADMIN_GRANTED");
+                        incrementBytesSent("ADMIN_GRANTED");
+                        log(" Admin u identifikua: " + clientIP);
+                    } else {
+                        out.println("READ_ONLY");
+                        incrementBytesSent("READ_ONLY");
+                        log(" Përdorues i rregullt: " + clientIP);
+                    }

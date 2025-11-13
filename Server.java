@@ -253,3 +253,26 @@ public class Server {
                     log("Gabim shkrimi: " + e.getMessage());
                 }
             }
+
+            private void resetTimeout() {
+                if (timeoutTimer != null) timeoutTimer.cancel();
+                timeoutTimer = new Timer(true);
+                timeoutTimer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        log("Timeout: Mbyllje e detyruar për " + clientIP);
+                        closeConnection();
+                    }
+                }, TIMEOUT_MS);
+            }
+
+            private void closeConnection() {
+                try {
+                    if (timeoutTimer != null) timeoutTimer.cancel();
+                    if (socket != null && !socket.isClosed()) socket.close();
+                    activeClients.remove(this);
+                    log(" Lidhja u mbyll për: " + clientIP);
+                } catch (IOException e) {
+                    log("Gabim gjatë mbylljes: " + e.getMessage());
+                }
+            }

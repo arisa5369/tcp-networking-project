@@ -199,3 +199,19 @@ public class Server {
                                     ? "SUCCESS: Fshirë - " + arg
                                     : "ERROR: Dështoi fshirja.");
                             break;
+
+                        case "/download":
+                            sendResponse(readFile(new File(dir, arg)));
+                            break;
+
+                        case "/stats":
+                            sendResponse(String.format(
+                                    "Aktivë: %d/%d | Mesazhe nga ty: %d | Bytes dërguar: %d | Bytes pranuar: %d",
+                                    activeClients.size(), MAX_CONNECTIONS,
+                                    messagesPerClient.getOrDefault(clientIP, 0),
+                                    totalBytesSent, totalBytesReceived));
+                            break;
+
+                        default:
+                            sendResponse("ERROR: Komandë e panjohur.");
+                    }

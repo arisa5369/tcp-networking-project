@@ -170,3 +170,32 @@ public class Server {
                             }
                             sendResponse(results.isEmpty() ? "NOT_FOUND: \"" + arg + "\"" : results.toString());
                             break;
+                        case "/upload":
+                            if (!isAdmin) {
+                                sendResponse("ERROR: Pa qasje (admin required).");
+                                return;
+                            }
+                            out.println("OK_UPLOAD");
+                            incrementBytesSent("OK_UPLOAD");
+                            StringBuilder content = new StringBuilder();
+                            String line;
+                            while ((line = in.readLine()) != null) {
+                                incrementBytesReceived(line);
+                                if ("EOF".equals(line)) break;
+                                content.append(line).append("\n");
+                            }
+                            writeFile(new File(dir, arg), content.toString());
+                            log(" Upload nga " + clientIP + ": " + arg + " (" + content.length() + " bytes)");
+                            sendResponse("SUCCESS: Upload complete - " + arg);
+                            break;
+
+                        case "/delete":
+                            if (!isAdmin) {
+                                sendResponse("ERROR: Pa qasje.");
+                                return;
+                            }
+                            File fileToDelete = new File(dir, arg);
+                            sendResponse(fileToDelete.exists() && fileToDelete.delete()
+                                    ? "SUCCESS: Fshirë - " + arg
+                                    : "ERROR: Dështoi fshirja.");
+                            break;

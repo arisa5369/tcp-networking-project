@@ -148,3 +148,25 @@ public class Server {
                                 sendResponse("ERROR: Specifiko emrin e skedarit.");
                                 return;
                             }
+
+                            File f = new File(dir, arg);
+                            if (f.exists()) {
+                                sendResponse(String.format("File: %s | Madhësia: %d bytes | Modifikuar: %s",
+                                        f.getName(), f.length(), DATE_FORMAT.format(new Date(f.lastModified()))));
+                            } else sendResponse("ERROR: Skedari nuk ekziston.");
+                            break;
+
+                        case "/search":
+                            if (arg == null) {
+                                sendResponse("ERROR: Specifiko fjalën për kërkim.");
+                                return;
+                            }
+                            List<String> results = new ArrayList<>();
+                            for (String fileName : Objects.requireNonNull(dir.list())) {
+                                String content = readFile(new File(dir, fileName));
+                                if (content.toLowerCase().contains(arg.toLowerCase())) {
+                                    results.add(fileName);
+                                }
+                            }
+                            sendResponse(results.isEmpty() ? "NOT_FOUND: \"" + arg + "\"" : results.toString());
+                            break;

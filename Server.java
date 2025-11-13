@@ -101,3 +101,23 @@ public class Server {
                         incrementBytesSent("READ_ONLY");
                         log(" Përdorues i rregullt: " + clientIP);
                     }
+
+                    String message;
+                    while ((message = in.readLine()) != null) {
+                        incrementBytesReceived(message);
+                        resetTimeout();
+                        messagesPerClient.put(clientIP, messagesPerClient.getOrDefault(clientIP, 0) + 1);
+                        log(" Mesazh nga " + clientIP + ": " + message);
+                        processCommand(message.trim());
+                        if (!isAdmin) Thread.sleep(500);
+                    }
+                } catch (SocketTimeoutException e) {
+                    log(" Timeout për klientin: " + clientIP);
+                } catch (IOException e) {
+                    log(" Gabim komunikimi me " + clientIP + ": " + e.getMessage());
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                } finally {
+                    closeConnection();
+                }
+            }

@@ -121,3 +121,9 @@ public class Server {
                     closeConnection();
                 }
             }
+            private void processCommand(String command) {
+                String[] parts = command.split(" ", 2);
+                String cmd = parts[0];
+                String arg = parts.length > 1 ? parts[1].trim() : null;
+                File dir = new File(LOG_DIR);
+                if (!dir.exists()) dir.mkdirs();

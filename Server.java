@@ -276,3 +276,14 @@ public class Server {
                     log("Gabim gjatë mbylljes: " + e.getMessage());
                 }
             }
+            private void log(String message) {
+                String logEntry = String.format("[%s] %s", DATE_FORMAT.format(new Date()), message);
+                System.out.println(logEntry);
+                try (PrintWriter pw = new PrintWriter(new FileWriter(MESSAGE_LOG, true))) {
+                    pw.println(logEntry);
+                } catch (IOException e) {
+                    System.err.println("Gabim logimi: " + e.getMessage());
+                }
+            }
+        }
+    }

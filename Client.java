@@ -61,3 +61,55 @@ public class Client {
                         }
                         String fileName = parts[1].trim();
                         out.println(message);
+                        File localFile = new File("downloaded_" + fileName);
+                        try (BufferedWriter writer = new BufferedWriter(new FileWriter(localFile))) {
+                            String line;
+                            boolean fileFound = false;
+                            while ((line = in.readLine()) != null) {
+                                if ("EOF".equals(line)) break;
+                                if (line.equals("FILE_NOT_FOUND")) {
+                                    System.out.println(" File-i nuk ekziston në server.");
+                                    fileFound = false;
+                                    break;
+                                }
+                                writer.write(line);
+                                writer.newLine();
+                                fileFound = true;
+                            }
+                            if (fileFound) {
+                                System.out.println(" File-i u shkarkua me sukses si: " + localFile.getName());
+                            }
+                        } catch (IOException e) {
+                            System.out.println(" Gabim gjatë ruajtjes së file-it: " + e.getMessage());
+                        }
+                    }
+
+                    else {
+                        out.println(message);
+                        System.out.println("Pergjigje nga server:\n" + readFullResponse(in));
+                    }
+                }
+
+                System.out.println("Po dilni nga klienti...");
+                break;
+
+            } catch (IOException e) {
+                System.out.println("Lidhja deshtoi: " + e.getMessage());
+                System.out.println("Po provoj përsëri pas 5 sekondash...");
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException ignored) {}
+            }
+        }
+    }
+
+    private static String readFullResponse(BufferedReader in) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        String line;
+        while ((line = in.readLine()) != null) {
+            if ("EOF".equals(line)) break;
+            sb.append(line).append("\n");
+        }
+        return sb.toString().trim();
+    }
+}
